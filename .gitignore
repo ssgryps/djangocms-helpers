@@ -8,3 +8,6 @@ __pycache__/
 .idea/
 /*.log
 *.iml
+*.egg-info
+dist/
+build/

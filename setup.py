@@ -9,7 +9,7 @@ setup(
     author_email='victor@what.digital',
     url='https://gitlab.com/what-digital/djangocms-helpers',
     packages=[
-        'env_settings',
+        'djangocms_helpers',
     ],
     include_package_data=True,
     install_requires=[
