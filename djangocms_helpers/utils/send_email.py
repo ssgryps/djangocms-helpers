@@ -16,7 +16,7 @@ def send_email(
     email = EmailMultiAlternatives(
         subject=subject,
         body=template_plaintext.render(template_context),
-        from_email=settings.BUSINESS_EMAIL_VANE,
+        from_email=settings.DEFAULT_FROM_EMAIL,
         to=[email_destination],
     )
     template_html = get_template(template_html_path)
