@@ -28,7 +28,7 @@ def send_email(
 def _get_full_context(context_base: dict = None) -> dict:
     settings_exported = settings_export(request=None)
     settings_exported['site'] = Site.objects.get_current()
-    settings_exported['base_url'] = settings.META_SITE_PROTOCOL + Site.objects.get_current().domain
+    settings_exported['base_url'] = settings.META_SITE_PROTOCOL + '://' + Site.objects.get_current().domain
     if context_base is None:
         return settings_exported
     else:
