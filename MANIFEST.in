@@ -1,3 +1,3 @@
-recursive-include djangocms_helpers *py
+recursive-include djangocms_helpers *.py *.html
 include setup.py
 include setup.cfg

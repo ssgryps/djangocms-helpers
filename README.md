@@ -19,7 +19,6 @@ Update `INSTALLED_APPS` with :
 
 
 If you would like to enable the sentry 500 error handler:
-- add `djangocms_helpers.sentry_500_error_handler` to you `INSTALLED_APPS`
 - add
     ```
     if not settings.DEBUG:
