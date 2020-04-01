@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='djangocms-helpers',
-    version='2.0.2',
+    version='2.1.0',
     author='Victor',
     author_email='victor@what.digital',
     url='https://gitlab.com/what-digital/djangocms-helpers',
