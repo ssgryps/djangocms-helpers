@@ -1,6 +1,10 @@
-from cms.models import Title, Page
-from django.dispatch import receiver
+from typing import Union
+
+from cms.models import EmptyTitle
+from cms.models import Page
+from cms.models import Title
 from django.db.models.signals import post_save
+from django.dispatch import receiver
 from fieldsignals import post_save_changed
 
 
@@ -22,6 +26,13 @@ def _update_child_pages(page: Page):
 
 
 def _update_title_path(page: Page, language: str):
-    if hasattr(page.get_title_obj(language, fallback=False), 'get_path_for_base'):
-        # noinspection PyProtectedMember
-        page._update_title_path(language)
+    page_title: Union[Title, EmptyTitle] = page.get_title_obj(language, fallback=False)
+    is_title_exists = type(page_title) == Title
+
+    if is_title_exists:
+        is_title_has_url_overwrite_and_path_update_breaks_it = page_title.has_url_overwrite
+
+        if is_title_has_url_overwrite_and_path_update_breaks_it:
+            page_title.save()
+        else:
+            page._update_title_path(language)
