@@ -2,9 +2,12 @@
 from setuptools import setup
 
 
+from djangocms_helpers import __version__
+
+
 setup(
     name='djangocms-helpers',
-    version='2.1.0.2',
+    version=__version__,
     author='Victor',
     author_email='victor@what.digital',
     url='https://gitlab.com/what-digital/djangocms-helpers',

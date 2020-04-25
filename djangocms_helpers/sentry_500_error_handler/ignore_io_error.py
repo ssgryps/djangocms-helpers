@@ -1,8 +1,11 @@
 import traceback
+from typing import Any
+from typing import Dict
 from typing import Optional
 
-# noinspection PyProtectedMember
-from sentry_sdk._types import Event
+
+Event = Dict[str, Any]
+Hint = Event
 
 
 def ignore_io_error(event: Event, hint: dict) -> Optional[Event]:
