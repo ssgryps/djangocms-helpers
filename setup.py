@@ -16,7 +16,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        'django >= 2.2, < 3',
+        'django >= 2.2, < 4',
         'django-fieldsignals >= 0.4.0',
         'django-meta',
     ],
